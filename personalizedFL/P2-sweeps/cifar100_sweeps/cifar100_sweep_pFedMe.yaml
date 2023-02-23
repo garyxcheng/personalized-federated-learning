@@ -1,0 +1,73 @@
+description: Sweep for training 
+
+# Training script to run
+program: main.py
+
+# Method can be bayes, random, grid
+method: grid
+
+# Parameters to search over
+parameters:
+  algorithm:
+   value: "pFedMe"
+  dataset:
+   value: "prep_CIFAR100"
+  model:
+   value: "resnet"
+  batch_size:
+   value: 32
+  num_global_iters:
+   value: 402
+  local_epochs:
+   value: 20
+  optimizer:
+   value: "SGD"
+  numusers:
+   value: 20
+  seed:
+   value: 1
+  
+  personal_epochs:
+   value: 10
+  decimate:
+   value: 50
+  
+  #NOTE: THE NOMENCLATURE OF LEARNING_RATE, BETA, AND PERSONAL_LEARNING_RATE ARE DIFFERENT FOR PFEDME THAN FOR THE PERAVG STYLE OF ALGORITHM
+
+  learning_rate:
+   values: [0.0005, 0.005, 0.05] #[0.0001, 0.005, 0.1, 1]
+  
+  #PerAvg, PerAvgHF, pFedMe
+  beta: 
+   values: [1, 2] #[0.1, 10] 
+
+  #ridge
+  # user_ridge_penalty:
+  #  values: [0.01, 1, 10]
+
+  #HF
+  # delta_HF:
+  #  values: [0.0001, 0.001, 0.01]
+
+  #pFedMe
+  lamda:
+   value: 15
+  personal_learning_rate: 
+   value: 0.05
+  K:
+   value: 5
+
+
+  #misc
+  times:
+   value: 1
+  rank:
+   value: 0
+  
+
+  
+  # dropout1:
+  #  values:
+  # dropout2:
+  #  values:
+

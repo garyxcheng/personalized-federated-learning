@@ -1,0 +1,71 @@
+description: Sweep for training 
+
+# Training script to run
+program: main.py
+
+# Method can be bayes, random, grid
+method: grid
+
+# Parameters to search over
+parameters:
+  algorithm:
+   value: "Naive"
+  dataset:
+   value: "prep_Stackoverflownwp"
+  model:
+   value: "rnnstackoverflow"
+  batch_size:
+   value: 32
+  num_global_iters: #should be okay
+   value: 401 
+  local_epochs: #unimportant
+   value: 20
+  optimizer:
+   value: "SGD"
+  numusers: #unimportant
+   value: 20
+  seed:
+   values: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+  
+  # personal_epochs:
+  # #  value: 10
+  # decimate:
+  #  value: 20
+  
+  beta:
+   values: [0.1]
+  
+  #PerAvg, PerAvgHF, pFedMe
+  # learning_rate: 
+  #  values: [0.0001, 0.001, 0.01, 0.1, 1]
+
+  #ridge
+  # user_ridge_penalty:
+  #  values: [0.01, 1, 10]
+
+  #HF
+  # delta_HF:
+  #  values: [0.0001, 0.001, 0.01]
+
+  #pFedMe
+  # lambda:
+  #  values: []
+  # personal_learning_rate:
+  #  values: []
+  # K:
+  #  values: []
+
+
+  #misc
+  times:
+   value: 1
+  rank:
+   value: 0
+  
+
+  
+  # dropout1:
+  #  values:
+  # dropout2:
+  #  values:
+

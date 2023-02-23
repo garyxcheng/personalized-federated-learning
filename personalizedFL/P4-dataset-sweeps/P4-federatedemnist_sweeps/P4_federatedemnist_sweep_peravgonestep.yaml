@@ -1,0 +1,73 @@
+description: Sweep for training 
+
+# Training script to run
+program: main.py
+
+# Method can be bayes, random, grid
+method: grid
+
+# Parameters to search over
+parameters:
+  datasetnumber:
+   values: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+  algorithm:
+   value: "PerAvgOneStep"
+  dataset:
+   value: "prep_FederatedEMNIST"
+  model:
+   value: "cnn"
+  batch_size:
+   value: 32
+  num_global_iters:
+   value: 402
+  local_epochs:
+   value: 20
+  optimizer:
+   value: "SGD"
+  numusers:
+   value: 20
+  seed:
+   values: [1]
+  
+  personal_epochs:
+   value: 1
+  decimate:
+   value: 50
+  
+  beta:
+   values: [0.1]
+  
+  #PerAvg, PerAvgHF, pFedMe
+  learning_rate: 
+   values: [0.1]
+
+  #ridge
+  # user_ridge_penalty:
+  #  values: [0.01, 1, 10]
+
+  #HF
+  # delta_HF:
+  #  values: [0.0001, 0.001, 0.01]
+
+  #pFedMe
+  # lambda:
+  #  values: []
+  # personal_learning_rate:
+  #  values: []
+  # K:
+  #  values: []
+
+
+  #misc
+  times:
+   value: 1
+  rank:
+   value: 0
+  
+
+  
+  # dropout1:
+  #  values:
+  # dropout2:
+  #  values:
+

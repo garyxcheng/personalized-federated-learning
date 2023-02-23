@@ -1,0 +1,19 @@
+description: Sweep for training federated learning initial model
+
+# Training script to run
+program: shakespeare_pretrain_main.py
+
+# Method can be bayes, random, grid
+method: grid
+
+# Parameters to search over
+parameters:
+  gamma:
+   values: [0.1, 0.3, 0.5]
+  lr:
+   values: [0.0001, 0.001, 0.01, 0.1, 1]
+  # dropout1:
+  #  values:
+  # dropout2:
+  #  values:
+
